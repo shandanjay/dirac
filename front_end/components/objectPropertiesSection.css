@@ -9,6 +9,10 @@
     flex-shrink: 0;
 }
 
+.object-properties-section .name.friendly-name .friendly-num {
+    color: #999;
+}
+
 .object-properties-section-separator {
     flex-shrink: 0;
     padding-right: 5px;
@@ -27,6 +31,27 @@
 
 .object-properties-section li {
     -webkit-user-select: text;
+    align-items: flex-start;
+}
+
+.object-properties-section li.cluster-0 {
+   border-right: 2px solid hsla(226, 98%, 83%, 0.6);
+}
+
+.object-properties-section li.cluster-1 {
+   border-right: 2px solid hsla(50, 98%, 83%, 0.6);
+}
+
+.object-properties-section li.cluster-2 {
+   border-right: 2px solid hsla(0, 98%, 83%, 0.6);
+}
+
+.object-properties-section li.cluster-3 {
+   border-right: 2px solid hsla(226, 0%, 83%, 0.6);
+}
+
+.object-properties-section li.after-cluster-boundary {
+   border-top: 1px dashed #eee;
 }
 
 .object-properties-section li::before {

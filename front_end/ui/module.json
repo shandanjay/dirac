@@ -42,6 +42,7 @@
         "TabbedPane.js",
         "SidebarPane.js",
         "TextPrompt.js",
+        "DiracPrompt.js",
         "UIUtils.js",
         "ViewportControl.js",
         "ZoomManager.js",
@@ -78,6 +79,7 @@
         "textButton.css",
         "textPrompt.css",
         "tooltip.css",
-        "treeoutline.css"
+        "treeoutline.css",
+        "treeoutline-dirac.css"
     ]
 }

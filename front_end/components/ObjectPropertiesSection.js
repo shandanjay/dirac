@@ -118,6 +118,32 @@ WebInspector.ObjectPropertiesSection.prototype = {
     __proto__: TreeOutlineInShadow.prototype
 }
 
+WebInspector.ObjectPropertiesSection.PropertyCluster = function(property) {
+    // we want normal nice names to go first
+    // then all generated variable names with double underscores
+    // then all null values
+    // then all undefined values
+    try {
+        var value = property.value
+        if (!value) {
+            return 3;
+        }
+        if (value.type === "undefined") {
+            return 3;
+        }
+        if (value.subtype === "null") {
+            return 2;
+        }
+        var name = property.name;
+        if (name.indexOf("__")!=-1) {
+            return 1;
+        }
+        return 0;
+    } catch (e) {
+        return 4;
+    }
+}
+
 /**
  * @param {!WebInspector.RemoteObjectProperty} propertyA
  * @param {!WebInspector.RemoteObjectProperty} propertyB
@@ -125,6 +151,18 @@ WebInspector.ObjectPropertiesSection.prototype = {
  */
 WebInspector.ObjectPropertiesSection.CompareProperties = function(propertyA, propertyB)
 {
+    if (dirac.hasClusteredLocals) {
+        var clusterA = WebInspector.ObjectPropertiesSection.PropertyCluster(propertyA);
+        var clusterB = WebInspector.ObjectPropertiesSection.PropertyCluster(propertyB);
+
+        if (clusterA > clusterB) {
+          return 1;
+        }
+        if (clusterA < clusterB) {
+          return -1;
+        }
+    }
+
     var a = propertyA.name;
     var b = propertyB.name;
     if (a === "__proto__")
@@ -240,7 +278,7 @@ WebInspector.ObjectPropertyTreeElement.prototype = {
 
     update: function()
     {
-        this.nameElement = WebInspector.ObjectPropertiesSection.createNameElement(this.property.name);
+        this.nameElement = WebInspector.ObjectPropertiesSection.createNameElement(this.property.name, this.property._friendlyName, this.property._friendlyNameNum);
         if (!this.property.enumerable)
             this.nameElement.classList.add("object-properties-section-dimmed");
         if (this.property.isAccessorProperty())
@@ -262,6 +300,17 @@ WebInspector.ObjectPropertyTreeElement.prototype = {
             this.valueElement = createElementWithClass("span", "object-value-undefined");
             this.valueElement.textContent = WebInspector.UIString("<unreadable>");
             this.valueElement.title = WebInspector.UIString("No property getter");
+        }
+
+        if (this.property._cluster !== undefined) {
+            var clusterClass = "cluster-"+this.property._cluster;
+            this.listItemElement.classList.add(clusterClass);
+        }
+        if (this.property._beforeClusterBoundary) {
+            this.listItemElement.classList.add("before-cluster-boundary");
+        }
+        if (this.property._afterClusterBoundary) {
+            this.listItemElement.classList.add("after-cluster-boundary");
         }
 
         this.listItemElement.removeChildren();
@@ -454,6 +503,17 @@ WebInspector.ObjectPropertyTreeElement._populate = function(treeElement, value, 
         WebInspector.RemoteObject.loadFromObjectPerProto(value, callback);
 }
 
+var getFriendlyName = function(name) {
+    var duIndex = name.indexOf("__");
+    if (duIndex != -1) {
+        return name.substring(0, duIndex);
+    }
+    var suMatch = name.match(/(.*?)_\d+$/);
+    if (suMatch) {
+        return suMatch[1];
+    }
+}
+
 /**
  * @param {!TreeElement} treeNode
  * @param {!Array.<!WebInspector.RemoteObjectProperty>} properties
@@ -464,9 +524,32 @@ WebInspector.ObjectPropertyTreeElement._populate = function(treeElement, value, 
  */
 WebInspector.ObjectPropertyTreeElement.populateWithProperties = function(treeNode, properties, internalProperties, skipProto, value, emptyPlaceholder) {
     properties.sort(WebInspector.ObjectPropertiesSection.CompareProperties);
+    var friendlyNamesTable = {};
 
+    var previousProperty = null;
     for (var i = 0; i < properties.length; ++i) {
         var property = properties[i];
+
+        if (dirac.hasClusteredLocals) {
+            property._cluster = WebInspector.ObjectPropertiesSection.PropertyCluster(property);
+            if (previousProperty && property._cluster != previousProperty._cluster) {
+                property._afterClusterBoundary = true;
+                previousProperty._beforeClusterBoundary = true;
+            }
+        }
+
+        if (dirac.hasFriendlyLocals) {
+            var friendlyName = getFriendlyName(property.name);
+            if (friendlyName) {
+                property._friendlyName = friendlyName;
+                var num = friendlyNamesTable[friendlyName];
+                if (!num) num = 0;
+                num += 1;
+                property._friendlyNameNum = num;
+                friendlyNamesTable[friendlyName] = num;
+            }
+        }
+
         if (skipProto && property.name === "__proto__")
             continue;
         if (property.isAccessorProperty()) {
@@ -490,6 +573,7 @@ WebInspector.ObjectPropertyTreeElement.populateWithProperties = function(treeNod
             property.parentObject = value;
             treeNode.appendChild(new WebInspector.ObjectPropertyTreeElement(property));
         }
+        previousProperty = property;
     }
     if (internalProperties) {
         for (var i = 0; i < internalProperties.length; i++) {
@@ -1039,13 +1123,23 @@ WebInspector.ObjectPropertyPrompt.prototype = {
  * @param {?string} name
  * @return {!Element}
  */
-WebInspector.ObjectPropertiesSection.createNameElement = function(name)
+WebInspector.ObjectPropertiesSection.createNameElement = function(name, friendlyName, friendlyNameNum)
 {
     var nameElement = createElementWithClass("span", "name");
-    if (/^\s|\s$|^$|\n/.test(name))
-        nameElement.createTextChildren("\"", name.replace(/\n/g, "\u21B5"), "\"");
+    var effectiveName = friendlyName || name;
+    if (/^\s|\s$|^$|\n/.test(effectiveName))
+        nameElement.createTextChildren("\"", effectiveName.replace(/\n/g, "\u21B5"), "\"");
     else
-        nameElement.textContent = name;
+        nameElement.textContent = effectiveName;
+
+    if (friendlyName) {
+        nameElement.classList.add("friendly-name");
+        var sub = createElementWithClass("sub", "friendly-num");
+        sub.textContent = friendlyNameNum;
+        nameElement.appendChild(sub);
+        nameElement.title = name;
+    }
+
     return nameElement;
 }
 

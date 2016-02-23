@@ -81,14 +81,19 @@
         }
     ],
     "dependencies": [
-        "components", "ui_lazy"
+        "components", "ui_lazy", "source_frame"
     ],
     "scripts": [
+        "clojure-parinfer.js",
         "ConsoleViewMessage.js",
         "ConsoleView.js",
         "ConsolePanel.js"
     ],
     "resources": [
-        "consoleView.css"
+        "consoleView.css",
+        "dirac-hacks.css",
+        "dirac-codemirror.css",
+        "dirac-theme.css",
+        "dirac-prompt.css"
     ]
 }
