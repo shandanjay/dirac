@@ -1,0 +1,331 @@
+repo_name: shandanjay/dirac
+report_id: 5abb194d66c275f6f722f102386b0be1
+version: 0.1
+repo_type: Public
+timestamp: '2024-01-31T14:27:57+00:00'
+requested_by: darwin
+provider: github
+branch: master
+detected_tools_count: 26
+tools:
+- name: CSS 3
+  description: The latest evolution of the Cascading Style Sheets language
+  website_url: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/6727/css.png
+  detection_source_url: https://github.com/shandanjay/dirac
+  detection_source: Repo Metadata
+- name: Clojure
+  description: A dynamic programming language that targets the Java Virtual Machine
+  website_url: http://clojure.org/
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1003/Clojure_300x300.png
+  detection_source_url: https://github.com/shandanjay/dirac
+  detection_source: Repo Metadata
+- name: Java
+  description: A concurrent, class-based, object-oriented, language specifically designed
+    to have as few implementation dependencies as possible
+  website_url: https://www.java.com
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/995/K85ZWV2F.png
+  detection_source_url: https://github.com/shandanjay/dirac
+  detection_source: Repo Metadata
+- name: JavaScript
+  description: Lightweight, interpreted, object-oriented language with first-class
+    functions
+  website_url: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source_url: https://github.com/shandanjay/dirac
+  detection_source: Repo Metadata
+- name: Python
+  description: A clear and powerful object-oriented programming language, comparable
+    to Perl, Ruby, Scheme, or Java.
+  website_url: https://www.python.org
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/993/pUBY5pVj.png
+  detection_source_url: https://github.com/shandanjay/dirac
+  detection_source: Repo Metadata
+- name: Git
+  description: Fast, scalable, distributed revision control system
+  website_url: http://git-scm.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Version Control System
+  image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/shandanjay/dirac
+  detection_source: Repo Metadata
+- name: Travis CI
+  description: A hosted continuous integration service for open source and private
+    projects
+  website_url: http://travis-ci.com/
+  open_source: false
+  hosted_saas: true
+  category: Build, Test, Deploy
+  sub_category: Continuous Integration
+  image_url: https://img.stackshare.io/service/460/Lu6cGu0z_400x400.png
+  detection_source_url: https://github.com/shandanjay/dirac/blob/master/.travis.yml
+  detection_source: ".travis.yml"
+  last_updated_by: Antonin Hildebrand
+  last_updated_on: 2016-01-18 00:58:31.000000000 Z
+- name: Shell
+  description: A shell is a text-based terminal, used for manipulating programs and
+    files. Shell scripts typically manage program execution.
+  website_url: https://en.wikipedia.org/wiki/Shell_script
+  open_source: false
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/4631/default_c2062d40130562bdc836c13dbca02d318205a962.png
+  detection_source_url: https://github.com/shandanjay/dirac
+  detection_source: Repo Metadata
+- name: binaryage/chromex
+  description: A ClojureScript wrapper for writing Chrome Extensions and Apps
+  package_url: https://clojars.org/binaryage/chromex
+  version: 0.2.0
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/clojars/image.png
+  detection_source_url: https://github.com/shandanjay/dirac/blob/master/project.clj
+  detection_source: project.clj
+  last_updated_by: Antonin Hildebrand
+  last_updated_on: 2016-01-31 23:08:03.000000000 Z
+- name: binaryage/devtools
+  description: A collection of Chrome DevTools enhancements for ClojureScript developers
+  package_url: https://clojars.org/binaryage/devtools
+  version: 0.5.2
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/clojars/image.png
+  detection_source_url: https://github.com/shandanjay/dirac/blob/master/project.clj
+  detection_source: project.clj
+  last_updated_by: Antonin Hildebrand
+  last_updated_on: 2016-01-31 23:08:03.000000000 Z
+- name: clj-logging-config
+  description: Easy logging configuration for Clojure
+  package_url: https://clojars.org/clj-logging-config
+  version: 1.9.12
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/clojars/image.png
+  detection_source_url: https://github.com/shandanjay/dirac/blob/master/project.clj
+  detection_source: project.clj
+  last_updated_by: Antonin Hildebrand
+  last_updated_on: 2016-01-31 23:08:03.000000000 Z
+- name: clj-webdriver
+  description: Clojure API for Selenium-WebDriver
+  package_url: https://clojars.org/clj-webdriver
+  version: 0.7.2
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/clojars/image.png
+  detection_source_url: https://github.com/shandanjay/dirac/blob/master/project.clj
+  detection_source: project.clj
+  last_updated_by: Antonin Hildebrand
+  last_updated_on: 2016-01-30 22:31:31.000000000 Z
+- name: cljs-http
+  description: A ClojureScript HTTP library
+  package_url: https://clojars.org/cljs-http
+  version: 0.1.39
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/clojars/image.png
+  detection_source_url: https://github.com/shandanjay/dirac/blob/master/project.clj
+  detection_source: project.clj
+  last_updated_by: Antonin Hildebrand
+  last_updated_on: 2016-01-31 23:08:03.000000000 Z
+- name: com.lucasbradstreet/cljs-uuid-utils
+  description: ClojureScript micro-library with an implementation of a type 4
+  package_url: https://clojars.org/com.lucasbradstreet/cljs-uuid-utils
+  version: 1.0.2
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/clojars/image.png
+  detection_source_url: https://github.com/shandanjay/dirac/blob/master/project.clj
+  detection_source: project.clj
+  last_updated_by: Antonin Hildebrand
+  last_updated_on: 2016-01-31 23:08:03.000000000 Z
+- name: environ
+  description: Library for accessing environment variables
+  package_url: https://clojars.org/environ
+  version: 1.0.1
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/clojars/image.png
+  detection_source_url: https://github.com/shandanjay/dirac/blob/master/project.clj
+  detection_source: project.clj
+  last_updated_by: Antonin Hildebrand
+  last_updated_on: 2016-01-17 16:05:30.000000000 Z
+- name: figwheel
+  description: This project contains the client side code for Figwheel
+  package_url: https://clojars.org/figwheel
+  version: 0.5.0
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/clojars/image.png
+  detection_source_url: https://github.com/shandanjay/dirac/blob/master/project.clj
+  detection_source: project.clj
+  last_updated_by: Antonin Hildebrand
+  last_updated_on: 2016-01-31 23:08:03.000000000 Z
+- name: http-kit
+  description: High-performance event-driven HTTP client/server for Clojure
+  package_url: https://clojars.org/http-kit
+  version: 2.1.21
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/clojars/image.png
+  detection_source_url: https://github.com/shandanjay/dirac/blob/master/project.clj
+  detection_source: project.clj
+  last_updated_by: Antonin Hildebrand
+  last_updated_on: 2016-01-31 23:08:03.000000000 Z
+- name: http.async.client
+  description: Asynchronous HTTP Client for Clojure
+  package_url: https://clojars.org/http.async.client
+  version: 1.1.0
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/clojars/image.png
+  detection_source_url: https://github.com/shandanjay/dirac/blob/master/project.clj
+  detection_source: project.clj
+  last_updated_by: Antonin Hildebrand
+  last_updated_on: 2016-01-31 23:08:03.000000000 Z
+- name: parinfer
+  description: Simpler Lisp Editing
+  package_url: https://clojars.org/parinfer
+  version: 0.2.3
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/clojars/image.png
+  detection_source_url: https://github.com/shandanjay/dirac/blob/master/project.clj
+  detection_source: project.clj
+  last_updated_by: Antonin Hildebrand
+  last_updated_on: 2016-01-30 22:31:31.000000000 Z
+- name: reforms
+  description: Form helpers for React-based Clojurescript libraries
+  package_url: https://clojars.org/reforms
+  version: 0.4.3
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/clojars/image.png
+  detection_source_url: https://github.com/shandanjay/dirac/blob/master/project.clj
+  detection_source: project.clj
+  last_updated_by: Antonin Hildebrand
+  last_updated_on: 2016-01-30 22:31:31.000000000 Z
+- name: ring/ring-core
+  description: Ring core libraries
+  package_url: https://clojars.org/ring/ring-core
+  version: 1.4.0
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/clojars/image.png
+  detection_source_url: https://github.com/shandanjay/dirac/blob/master/project.clj
+  detection_source: project.clj
+  last_updated_by: Antonin Hildebrand
+  last_updated_on: 2016-01-31 23:08:03.000000000 Z
+- name: ring/ring-devel
+  description: Ring development and debugging libraries
+  package_url: https://clojars.org/ring/ring-devel
+  version: 1.4.0
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/clojars/image.png
+  detection_source_url: https://github.com/shandanjay/dirac/blob/master/project.clj
+  detection_source: project.clj
+  last_updated_by: Antonin Hildebrand
+  last_updated_on: 2016-01-31 23:08:03.000000000 Z
+- name: ring/ring-jetty-adapter
+  description: Ring Jetty adapter
+  package_url: https://clojars.org/ring/ring-jetty-adapter
+  version: 1.4.0
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/clojars/image.png
+  detection_source_url: https://github.com/shandanjay/dirac/blob/master/project.clj
+  detection_source: project.clj
+  last_updated_by: Antonin Hildebrand
+  last_updated_on: 2016-01-31 23:08:03.000000000 Z
+- name: rum
+  description: ClojureScript wrapper for React
+  package_url: https://clojars.org/rum
+  version: 0.6.0
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/clojars/image.png
+  detection_source_url: https://github.com/shandanjay/dirac/blob/master/project.clj
+  detection_source: project.clj
+  last_updated_by: Antonin Hildebrand
+  last_updated_on: 2015-12-14 23:50:38.000000000 Z
+- name: rum-reforms
+  description: Reforms bindings for Rum
+  package_url: https://clojars.org/rum-reforms
+  version: 0.4.3
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/clojars/image.png
+  detection_source_url: https://github.com/shandanjay/dirac/blob/master/project.clj
+  detection_source: project.clj
+  last_updated_by: Antonin Hildebrand
+  last_updated_on: 2016-01-30 22:31:31.000000000 Z
+- name: version-clj
+  description: Version Analysis and Comparison for Clojure
+  package_url: https://clojars.org/version-clj
+  version: 0.1.2
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/clojars/image.png
+  detection_source_url: https://github.com/shandanjay/dirac/blob/master/project.clj
+  detection_source: project.clj
+  last_updated_by: Antonin Hildebrand
+  last_updated_on: 2016-01-31 23:08:03.000000000 Z
